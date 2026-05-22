@@ -3,40 +3,51 @@
   "version": "1.0.0",
   "description": "React library to automatically generate high-fidelity skeleton loaders based on component layout structure.",
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./src/index.js",
+  "types": "./src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./src/index.d.ts"
     },
-    "./dist/style.css": "./dist/autoskeleton.css"
+    "./style.css": "./dist/autoskeleton.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
+  "keywords": [
+    "react",
+    "skeleton",
+    "loader",
+    "react-skeleton",
+    "ui",
+    "loading",
+    "autoskeleton"
+  ],
+  "author": "Youssef Atef",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Youssef-Atef-20/autoSkeleton.git"
+  },
+  "homepage": "https://github.com/Youssef-Atef-20/autoSkeleton#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.3.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.6.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "vite": "^8.0.12"
+    "react-dom": "^19.2.6"
+  },
+  "dependencies": {
+    "vite": "^5.4.21"
   }
 }
