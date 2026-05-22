@@ -1,0 +1,138 @@
+/* Base Skeleton Placeholder styles */
+.skeleton-placeholder {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--skeleton-bg, #e5e7eb);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Light Theme Variables */
+.skeleton-light {
+  --skeleton-bg: #e5e7eb;
+  --skeleton-highlight: #ffffff99;
+}
+
+/* Dark Theme Variables */
+.skeleton-dark {
+  --skeleton-bg: #374151;
+  --skeleton-highlight: #ffffff14;
+}
+
+/* Specific Element Types styles */
+.skeleton-text {
+  height: 0.85em;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 0.85em;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+}
+
+/* Remove bottom margin on last line in text container */
+.skeleton-text-container .skeleton-line:last-child {
+  margin-bottom: 0;
+}
+
+.skeleton-heading {
+  height: 1.5em;
+  border-radius: 6px;
+  width: 65%;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.skeleton-circle {
+  display: block;
+  border-radius: 50%;
+}
+
+.skeleton-button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.skeleton-input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+/* Animations */
+
+/* Shimmer Animation */
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    var(--skeleton-highlight) 30%,
+    var(--skeleton-highlight) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: skeleton-shimmer-anim var(--skeleton-duration, 1.5s) infinite ease-in-out;
+}
+
+@keyframes skeleton-shimmer-anim {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Pulse Animation */
+.skeleton-pulse {
+  animation: skeleton-pulse-anim var(--skeleton-duration, 1.5s) ease-in-out infinite alternate;
+}
+
+@keyframes skeleton-pulse-anim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+
+/* Wave Animation */
+.skeleton-wave::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    var(--skeleton-highlight) 25%,
+    var(--skeleton-highlight) 35%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: skeleton-wave-anim var(--skeleton-duration, 1.5s) infinite linear;
+}
+
+@keyframes skeleton-wave-anim {
+  100% {
+    transform: translateX(100%);
+  }
+}
